@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if
+[- z "$PYFILE"]
+then
+echo "PYFILE environment variable is not set."
+exit 1
+fi
+
+if
+[! - f "$PYFILE"]
+then
+echo "$PYFILE does not exist."
+exit 1
+fi
+
+output_file = "${PYFILE}c"
+
+echo "Compiling $PYFILE ..."
+python3 - m py_compile "$PYFILE" & &
+mv "__pycache__/$PYFILE.cpython-*.pyc" "$output_file" & &
+rmdir "--pycache__"
+
+if
+[- f "$output_file"]
+then
+echo "Compilation successful."
+else
+echo "Compilation failed."
+fi
