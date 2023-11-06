@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-str1 = "Holberton"
-str2 = "School"
-# YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
-print("Welcome to {} {}!".format(str1, str2))
+str1 = "Welcome to"
+str2 = " Holberton School!"
+# YOUR CODE GOES HERE
+print(str1 + str2)
