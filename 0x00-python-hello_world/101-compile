@@ -1,30 +1,10 @@
-#!/bin/bash
-
-if
-[- z "$PYFILE"]
-then
-echo "PYFILE environment variable is not set."
-exit 1
-fi
-
-if
-[! - f "$PYFILE"]
-then
-echo "$PYFILE does not exist."
-exit 1
-fi
-
-output_file = "${PYFILE}c"
-
-echo "Compiling $PYFILE ..."
-python3 - m py_compile "$PYFILE" & &
-mv "__pycache__/$PYFILE.cpython-*.pyc" "$output_file" & &
-rmdir "--pycache__"
-
-if
-[- f "$output_file"]
-then
-echo "Compilation successful."
-else
-echo "Compilation failed."
-fi
+#!/usr/bin/python3
+import py_compile
+import os
+if 'PYFILE' in os.environ:
+    py_file = os.environ['PYFILE']
+    pyc_file = py_file + 'c'
+    py_compile.compile(py_file, cfile=pyc_file)
+    print(f'Compiling {py_file} ...')
+else:
+    print("PYFILE environment variable is not set.")
