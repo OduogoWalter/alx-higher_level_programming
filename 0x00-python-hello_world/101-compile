@@ -3,8 +3,11 @@ import py_compile
 import os
 if 'PYFILE' in os.environ:
     py_file = os.environ['PYFILE']
-    pyc_file = py_file + 'c'
+    pyc_file = f"{py_file}c"
     py_compile.compile(py_file, cfile=pyc_file)
     print(f'Compiling {py_file} ...')
+
+    # Now, let's use the 'od' command to display the bytecode in hexadecimal
+    os.system(f"od - t x1 {pyc_file}")
 else:
     print("PYFILE environment variable is not set.")
