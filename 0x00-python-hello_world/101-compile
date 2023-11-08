@@ -1,21 +1,24 @@
-#!/usr/bin/python3
-import py_compile
-import os
+#!/bin/bash
 
-def display_bytecode(filename):
-    with open(filename, 'rb') as pyc_file:
-        bytecode = pyc_file.read()
-        hex_representation = ' '.join([f"{byte:02x}" for byte in bytecode])
-        print(hex_representation)
+if [- z "$PYFILE"]
+then
+echo "Error: PYFILE environment variable is not set."
+exit 1
+fi
 
-if 'PYFILE' in os.environ:
-    py_file = os.environ['PYFILE']
-    pyc_file = py_file + 'c'
-    py_compile.compile(py_file, cfile=pyc_file)
-    print(f'Compiling {py_file} ...')
+if [! - f "$PYFILE"]
+then
+echo "Error: $PYFILE does not exist."
+exit 1
+fi
 
+output_file = "${PYFILE}c"
+echo "Compiling $PYFILE ..."
+python3 - m py_compile "$PYFILE"
 
-    # Now, let's display the bytecode in hexadecimal
-    display_bytecode(pyc_file)
-else:
-    print("PYFILE environment variable is not set.")
+if [- f "$output_file"]
+then
+echo "Compilation succesfull. Compiled file: $output_file"
+else
+echo "Compilation failed."
+fi
