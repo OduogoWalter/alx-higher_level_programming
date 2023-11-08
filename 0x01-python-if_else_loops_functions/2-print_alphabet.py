@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-for letter in range(ord('a'), ord('z') + 1):
-    print(chr(letter), end='' if letter != ord('z') else '\n')
+output = ""
+for char in range(ord('a'), ord('z') + 1):
+    output += "{}".format(chr(char))
+print(output, end="")
