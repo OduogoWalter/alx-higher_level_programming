@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-alphabet = ""
-for i in range(ord('a'), ord('z') + 1):
-    alphabet += chr(i)
-print("{}{}".formart(alphabet, '\n'), end=""))
+for letter in range(ord('a'), ord('z') + 1):
+    print(chr(letter), end='' if letter != ord('z') else '\n')
