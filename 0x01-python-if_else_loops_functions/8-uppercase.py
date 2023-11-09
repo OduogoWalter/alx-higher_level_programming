@@ -7,8 +7,3 @@ def uppercase(s):
         else:
             result += "{}".format(c)
     print(result)
-
-
-# Example of use
-uppercase("best")
-uppercase("Best School 98 Battery street")
