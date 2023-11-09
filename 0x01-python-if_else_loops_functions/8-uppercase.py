@@ -2,10 +2,10 @@
 def uppercase(s):
     for c in s:
         if 'a' <= c <= 'z':
-            print("{}".format(chr(ord(c) - 32)), end='')
+            result += "{}".format(chr(ord(c) - 32))
         else:
-            print("{}".format(c), end='')
-    print()
+            result += "{}".format(c)
+    print(result)
 
 
 # Example of use
