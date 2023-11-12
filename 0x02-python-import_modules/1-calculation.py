@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from calculation.py import add, sub, mul, div
+from calculation_1 import add, sub, mul, div
 a = 10
 b = 5
 res_add = add(a, b)
