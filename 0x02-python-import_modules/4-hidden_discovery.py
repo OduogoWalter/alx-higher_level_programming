@@ -10,9 +10,8 @@ if __name__ == "__main__":
     spec.loader.exec_module(module)
 
     # Get all attributes of the module
-    attributes = dir(module)
+    attributes = [attr for attr in dir(module) if not attr.startswith("__")]
 
-    # Filter and print attributes that do not start with "__"
+    # Print one name per line in alphabetical order
     for attr in sorted(attributes):
-        if not attr.startswith("__"):
-            print(attr)
+        print(attr)
