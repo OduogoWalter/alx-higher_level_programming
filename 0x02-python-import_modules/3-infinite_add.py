@@ -1,12 +1,11 @@
 #!/usr/bin/python3
+from sys import argv
+
 if __name__ == "__main__":
-    from sys import argv
-
-    # Remove the script name from arguments
     args = argv[1:]
+    result = 0
 
-    # Calculate the sum of all arguments
-    result = sum(int(arg) for arg in args)
+    for arg in args:
+        result += int(arg)
 
-    # Print the result followed by a new line
     print(result)
