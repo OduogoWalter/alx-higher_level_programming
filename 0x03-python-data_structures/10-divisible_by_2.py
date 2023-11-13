@@ -4,6 +4,7 @@ def divisible_by_2(my_list=[]):
     # Use list comprehension to create a new list with True or False
     # depending on whether the integer is a multiple of 2
     result_list = [num % 2 == 0 for num in my_list]
+    return result_list
 
 
 if __name__ == "__main__":
