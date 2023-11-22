@@ -27,6 +27,11 @@ class Square:
 
     @property
     def position(self):
+        """Getter method to retrieve the value of position."""
+        return (self.__position)
+
+    @position.setter
+    def position(self, value):
         """Setter method to set the value of position with validation."""
         if not isinstance(value, tuple) or len(value) != 2 or \
                 not all(isinstance(x, int) and x >= 0 for x in value):
