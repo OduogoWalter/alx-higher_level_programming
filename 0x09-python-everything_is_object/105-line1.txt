@@ -1,0 +1,8 @@
+517 int objects.
+
+As for why this is the case, CPython
+optimizes the memory usage for small
+integers by pre-allocating a fixed
+range of them. This helps improve
+performance and reduce memory overhead
+for frequently used small integer values.
