@@ -2,6 +2,9 @@
 """Module containing a Rectangle class"""
 
 
+# Import the BaseGeometry class from the current module
+from 7-base_geometry import BaseGeometry
+
 class Rectangle(BaseGeometry):
     """A class representing a rectangle"""
 
