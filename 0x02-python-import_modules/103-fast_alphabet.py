@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-from string import ascii_uppercase
-print(*ascii_uppercase, sep='')
+print(''.join(chr(c) for c in range(ord('A'), ord('Z') + 1)), end="")
