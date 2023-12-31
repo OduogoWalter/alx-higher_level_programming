@@ -15,7 +15,10 @@ def delete_at(my_list=[], idx=0):
     if idx < 0 or idx >= len(my_list):
         return (my_list)
 
-    # Create a new list excluding the item at the specified index
-    new_list = my_list[:idx] + my_list[idx + 1:]
+    # Iterate through the list and remove the item at the specific index
+    for i in range(len(my_list)):
+        if i == idx:
+            del my_list[i]
+            break
 
-    return (new_list)
+    return (my_list)
