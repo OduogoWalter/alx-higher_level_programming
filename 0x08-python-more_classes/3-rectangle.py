@@ -35,22 +35,27 @@ class Rectangle:
         else:
             self.__height = value
 
-        def area(self):
-            """Initialization method with optional width and height"""
-            return (self.__width * self.__height)
+    def __init__(self, width=0, height=0):
+        """Initilaization method with optional width and height"""
+        self.width = width
+        self.height = height
 
-        def perimeter(self):
-            """Method to calculate and return the rectangle perimeter"""
-            return (0 if self.width == 0 or self.height == 0
-                    else 2 * (self.width + self.height))
+    def area(self):
+        """Initialization method with optional width and height"""
+        return (self.__width * self.__height)
 
-        def __str__(self):
-            """Method to create a string representation of the rectangle"""
-            if self.__width == 0 or self.__height == 0:
-                return ("")
-            return ("\n".join(['#' * self.__width
-                    for _ in range(self.__height)]))
+    def perimeter(self):
+        """Method to calculate and return the rectangle perimeter"""
+        return (0 if self.width == 0 or self.height == 0
+                else 2 * (self.width + self.height))
 
-        def __repr__(self):
-            """Method to create a representation of the rectangle"""
-            return ("Rectangle({}, {})".format(self.__width, self.__height))
+    def __str__(self):
+        """Method to create a string representation of the rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        return ("\n".join(['#' * self.__width
+                for _ in range(self.__height)]))
+
+    def __repr__(self):
+        """Method to create a representation of the rectangle"""
+        return ("Rectangle({}, {})".format(self.__width, self.__height))
