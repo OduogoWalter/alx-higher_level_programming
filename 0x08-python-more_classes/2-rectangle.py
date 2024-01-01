@@ -5,11 +5,6 @@
 class Rectangle:
     """Rectangle class with private width and height attributes"""
 
-    def __init__(self, width=0, height=0):
-        """Initialization method with optional width and height"""
-        self.width = width
-        self.height = height
-
     @property
     def width(self):
         """Getter method for width"""
@@ -39,6 +34,11 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
+    def __init__(self, width=0, height=0):
+        """Initialization method with optional width and height"""
+        self.width = width
+        self.height = height
 
     def area(self):
         """Method to calculate and return the rectangle area"""
