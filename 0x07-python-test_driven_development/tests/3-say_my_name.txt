@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+"""
+This is the doctest module to test the function say_my_name
+"""
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/3-say_my_name.txt")

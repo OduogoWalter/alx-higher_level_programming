@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+"""
+This is the doctest module to test the function text_indentation
+"""
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/5-text_indentation.txt")
