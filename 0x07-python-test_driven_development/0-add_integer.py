@@ -1,11 +1,20 @@
 #!/usr/bin/python3
+"""
+Aritmethic addition of two numbers
+"""
+
+
 def add_integer(a, b=98):
-    if not isinstance(a, int) and not isinstance(a, float):
-        raise TypeError("a must be an integer")
-    if not isinstance(b, int) and not isinstance(b, float):
-        raise TypeError("b must be an integer")
-    if isinstance(a, float):
+    """
+    Aritmethic addition of two numbers (integers or floats)
+    returns a + b
+    """
+    if (type(a) == float):
         a = int(a)
-    if isinstance(b, float):
+    elif (type(a) != int):
+        raise TypeError("a must be an integer")
+    if (type(b) == float):
         b = int(b)
-    return (a + b)
+    elif (type(b) != int):
+        raise TypeError("b must be an integer")
+    return (int(a) + int(b))
