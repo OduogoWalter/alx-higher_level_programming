@@ -1,14 +1,20 @@
-#!/usr/bin/python3
-"""Test cases for MyLIst class"""
-
-MyList = __import__('1-my_list').MyList
-
-my_list = MyList()
-my_list.append(1)
-my_list.append(4)
-my_list.append(2)
-my_list.append(3)
-my_list.append(5)
-print(my_list)
-my_list.print_sorted()
-print(my_list)
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(-73)
+>>> my_list.append(37)
+>>> my_list.append(0)
+>>> my_list.append(100)
+>>> print(my_list)
+[-73, 37, 0, 100]
+>>> my_list.print_sorted()
+[-73, 0, 37, 100]
+>>> print(my_list)
+[-73, 37, 0, 100]
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+>>> my_list = [-73, 37, 0]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'print_sorted'
