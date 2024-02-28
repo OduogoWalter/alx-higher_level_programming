@@ -10,10 +10,6 @@ class Square(Rectangle):
         """Initialize a Square instance."""
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """Return the string representation of the square."""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
     @property
     def size(self):
         """Getter for size attribute."""
@@ -24,6 +20,10 @@ class Square(Rectangle):
         """Setter for size attribute."""
         self.width = value
         self.height = value
+
+    def __str__(self):
+        """Return the string representation of the square."""
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     def update(self, *args, **kwargs):
         """Update the attributes of the square."""
@@ -36,10 +36,10 @@ class Square(Rectangle):
                 setattr(self, key, val)
 
     def to_dictionary(self):
-        """Return the dictionary representation of the square."""
+        """Return the dictionary representation of a Square."""
         return {
             'id': self.id,
-            'size': self.size,
+            'size': self.width,
             'x': self.x,
             'y': self.y
         }
