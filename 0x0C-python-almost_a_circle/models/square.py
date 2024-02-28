@@ -2,6 +2,8 @@
 """Module for the Square class."""
 from models.rectangle import Rectangle
 
+import csv
+
 
 class Square(Rectangle):
     """Square class inherits from Rectangle."""
@@ -43,3 +45,27 @@ class Square(Rectangle):
             'x': self.x,
             'y': self.y
         }
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        objects = []
+        try:
+            with open(filename, 'r', newline='') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    args = [int(arg) for arg in row]
+                    obj = cls.create(**dict(zip(cls.__init__.__code__.co_varnames[1:],
+                                                args)))
+                    objects.append(obj)
+            return objects
+        except FileNotFoundError:
+            return []

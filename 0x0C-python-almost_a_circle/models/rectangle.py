@@ -120,8 +120,7 @@ class Rectangle(Base):
         with open(filename, 'w', newline='') as file:
             writer = csv.writer(file)
             for obj in list_objs:
-                writer.writerow([obj.id, obj.width,
-                                 obj.height, obj.x, obj.y])
+                writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
 
     @classmethod
     def load_from_file_csv(cls):
@@ -132,8 +131,7 @@ class Rectangle(Base):
                 reader = csv.reader(file)
                 for row in reader:
                     args = [int(arg) for arg in row]
-                    obj = cls.create(**dict(zip(cls.__init__.__code__.co_varnames[1:],
-                                                args)))
+                    obj = cls.create(**dict(zip(cls.__init__.__code__.co_varnames[1:], args)))
                     objects.append(obj)
             return objects
         except FileNotFoundError:
