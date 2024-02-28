@@ -3,6 +3,7 @@
 from models.base import Base
 
 import csv
+import os
 
 
 class Rectangle(Base):
