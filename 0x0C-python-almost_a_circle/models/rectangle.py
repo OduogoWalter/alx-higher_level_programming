@@ -132,7 +132,8 @@ class Rectangle(Base):
                 reader = csv.reader(file)
                 for row in reader:
                     args = [int(arg) for arg in row]
-                    obj = cls.create(**dict(zip(cls.__init__.__code__.co_varnames[1:], args)))
+                    obj = cls.create(**dict(zip(cls.__init__.__code__.co_varnames[1:],
+                                                args)))
                     objects.append(obj)
             return objects
         except FileNotFoundError:
