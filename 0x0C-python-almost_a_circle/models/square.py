@@ -3,7 +3,6 @@
 from models.rectangle import Rectangle
 
 import csv
-import os
 
 
 class Square(Rectangle):
