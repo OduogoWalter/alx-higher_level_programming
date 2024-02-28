@@ -6,7 +6,7 @@ import json
 
 class Base:
     """Base class for managing id attribute."""
-    
+
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -70,11 +70,3 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
-
-    @staticmethod
-    def from_json_string(json_string):
-        """Return the list of dictionaries represented by json_string."""
-        if json_string is None or json_string == "":
-            return []
-        else:
-            return json.loads(json_string)
