@@ -81,27 +81,27 @@ class Base:
         for rectangle in list_rectangles:
             # Create a turtle object for the rectangle
             rect_turtle = turtle.Turtle()
-            rect_turtle.penup()  # Lift the pen to avoid drawing lines
-            rect_turtle.goto(rectangle.x, rectangle.y)  # Move to starting position
-            rect_turtle.pendown()  # Put the pen down to start drawing
-            for _ in range(2):  # Draw the rectangle
+            rect_turtle.penup()
+            rect_turtle.goto(rectangle.x, rectangle.y)
+            rect_turtle.pendown()
+            for _ in range(2):
                 rect_turtle.forward(rectangle.width)
                 rect_turtle.right(90)
                 rect_turtle.forward(rectangle.height)
                 rect_turtle.right(90)
-            rect_turtle.hideturtle()  # Hide the turtle after drawing the rectangle
+            rect_turtle.hideturtle()
 
         # Loop through squares and draw them
         for square in list_squares:
             # Create a turtle object for the square
             square_turtle = turtle.Turtle()
-            square_turtle.penup()  # Lift the pen to avoid drawing lines
-            square_turtle.goto(square.x, square.y)  # Move to starting position
-            square_turtle.pendown()  # Put the pen down to start drawing
-            for _ in range(4):  # Draw the square
+            square_turtle.penup()
+            square_turtle.goto(square.x, square.y)
+            square_turtle.pendown()
+            for _ in range(4):
                 square_turtle.forward(square.size)
                 square_turtle.right(90)
-            square_turtle.hideturtle()  # Hide the turtle after drawing the square
+            square_turtle.hideturtle()
 
         # Keep the window open until it is manually closed
         screen.mainloop()
