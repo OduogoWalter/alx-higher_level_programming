@@ -1,4 +1,6 @@
--- Script to compute the score average of all records in second_table
+-- script that computes the score average of all
+-- all records in the table second_table in my MySQL server.
 
 SELECT AVG(score) AS average
-FROM hbtn_0c_0.second_table;
+FROM second_table;
+
