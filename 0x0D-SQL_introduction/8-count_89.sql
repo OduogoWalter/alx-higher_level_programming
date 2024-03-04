@@ -1,3 +1,6 @@
--- Script to display the number of records with id = 89 in the table first_table
+-- displays the number of records with id = 89 in the table
+-- first_table of the database hbtn_0c_0 in your MySQL server.
 
-SELECT COUNT(*) AS count_89 FROM hbtn_0c_0.first_table WHERE id = 89;
+SELECT COUNT(*) FROM first_table
+WHERE id = 89;
+
