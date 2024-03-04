@@ -1,5 +1,7 @@
--- Script to list all records of second_table ordered by score (top first)
+-- lists all records of the table second_table
+-- of the database hbtn_0c_0 in your MySQL server
 
 SELECT score, name
 FROM hbtn_0c_0.second_table
 ORDER BY score DESC;
+
