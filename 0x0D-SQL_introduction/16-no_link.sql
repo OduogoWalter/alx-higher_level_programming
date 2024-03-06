@@ -1,6 +1,8 @@
--- Script to list records of second_table with names, ordered by descending score
+-- script that lists all records of the table second_table
+-- of the database hbtn_0c_0 in my MySQL server.
 
 SELECT score, name
-FROM hbtn_0c_0.second_table
-WHERE name IS NOT NULL AND name != ''
+FROM second_table
+WHERE name IS NOT NULL
 ORDER BY score DESC;
+

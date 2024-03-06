@@ -1,6 +1,8 @@
--- Script to list the number of records with the same score in second_table
+-- script that lists the number of records with the 
+-- same score in the table second_table in my MySQL server.
 
 SELECT score, COUNT(*) AS number
-FROM hbtn_0c_0.second_table
+FROM second_table
 GROUP BY score
 ORDER BY number DESC;
+
