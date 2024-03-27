@@ -1,10 +1,15 @@
 #!/bin/bash
-# This script sends a JSON POST request to a URL.
-# First argument: URL to send the request to.
-# Second argument: Filename of the file containing JSON data to send.
+# Sends a JSON POST request to a URL passed as the first argument,
+# with the contents of a file (second argument) as the request body,
+# and displays the response body.
 
-url="$1"
-json_file="$2"
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 URL FILE"
+    exit 1
+fi
 
-curl -s -X POST -H "Content-Type: application/json" -d @"$json_file" "$url"
+URL=$1
+FILE=$2
+
+curl -sX POST -H "Content-Type: application/json" -d @"$FILE" "$URL"
 
